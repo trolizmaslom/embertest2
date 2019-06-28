@@ -15,7 +15,7 @@ actions:{
         content:data.content,
         date:data.date,
       }
-      this.allData.updateePost(data.id, grabbed)
+      this.allData.updatePost(data.id, grabbed)
     }
   }
 });
