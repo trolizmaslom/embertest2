@@ -15,7 +15,6 @@ actions:{
         content:data.content,
         date:data.date,
       }
-
       this.allData.updateePost(data.id, grabbed)
     }
   }
