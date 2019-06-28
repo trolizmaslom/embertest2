@@ -12,6 +12,16 @@ export default Service.extend({
     let poster = this.store.createRecord('post', post);
     poster.save();
   },
+ updateePost(id, data){
+    this.store.findRecord('post', id).then((post) => {
+      post.set('title', data.title);
+post.set('description', data.description);
+post.set('author', data.author);
+post.set('content', data.content);
+post.set('date', data.date);
+      post.save();
+    })
+  },
   activatePost(id){
     this.store.findRecord('post', id).then((post) => {
       post.set('active', true);
