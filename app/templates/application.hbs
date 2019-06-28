@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row my-2">
+        <div class="col-md-12">
+          <h4>Filter by:</h4>
+        </div>
+      </div>
+      <form class="needs-validation" >
+        <div class="row my-2">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="id" required>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-md-6">
+            <button type="button" class="btn btn-success btn-block" onclick={{action "setStatusModal" true}}>Create News</button>
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-primary btn-block disabled">Filter</button>
+          </div>
+        </div>
+      </form>
+      <List @model={{ model }}/>
+    </div>
+    <div class="col-md-8" style="background-color: #ccc">
+      {{ outlet }}
+    </div>
+  </div>
+</div>
+{{#if showModal}}
+  {{#modal-dialog translucentOverlay=true onClose=( action "setStatusModal" false)}}
+  <Form><h3>Create News</h3></Form>
+  {{/modal-dialog}}
+{{/if}}

@@ -1,0 +1,19 @@
+{{yield}}
+<form {{action "saveNewPost" model on="submit"}}>
+  <div class="form-group">
+    {{input type="text" value=model.title placeholder="Title" class='form-control' required=true}}
+  </div>
+  <div class="form-group">
+    {{input type="text" value=model.description placeholder="description" class='form-control' required=true}}
+  </div>
+  <div class="form-group">
+    {{input type="text" value=model.author placeholder="author" class='form-control' required=true}}
+  </div>
+  <div class="form-group">
+    {{textarea value=model.content placeholder="content" class='form-control' required=true}}
+  </div>
+  <div class="form-group">
+    {{input type="date" value=model.date  class='form-control' required=true}}
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
